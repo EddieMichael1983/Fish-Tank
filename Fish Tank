@@ -1,0 +1,28 @@
+// How do I make bodyColor a true variable?  Tried var bodyColor on line 6 and it changes the color of all fish at once...//
+
+var drawFish = function(centerX, centerY, bodyLength, bodyHeight, bodyColor) {
+
+noStroke();
+var bodyColor = fill(255, 162, 0); /// Shouldn't this work???
+ellipse(centerX, centerY, bodyLength, bodyHeight);
+
+// tail
+var tailWidth = bodyLength/4;
+var tailHeight = bodyHeight/2;
+triangle(centerX-bodyLength/2, centerY,
+         centerX-bodyLength/2-tailWidth, centerY-tailHeight,
+         centerX-bodyLength/2-tailWidth, centerY+tailHeight);
+// eye
+fill(33, 33, 33);
+ellipse(centerX+bodyLength/4, centerY, bodyHeight/5, bodyHeight/5);  };
+
+background(89, 216, 255);
+
+
+// Here is where I want to be able to assign different colors in the 5th assignment... but it's not working.... 
+drawFish(107, 73, 100, 65, (99, 189, 138));
+drawFish(130, 194, 102, 100, (238, 255, 31));
+drawFish(70, 350, 42, 37, (0,0,0));
+drawFish(162, 310, 73, 72, (0,0,0));
+drawFish(287, 118, 101, 66, (0,0,0));
+drawFish(307, 273, 98, 95, (0,0,0));
